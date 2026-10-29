@@ -1,0 +1,21 @@
+# Host row this bundle contributes to the DeepSeek Harness profile.
+#
+# The plugin reads two scopes and mirrors them into the harness:
+#   global : ~/.copilot/agents/*.agent.md   ~/.copilot/skills/<name>/SKILL.md
+#   local  : <workspace>/.github/agents/*   <workspace>/.github/skills/*
+#
+# All config fields are optional. The defaults above are used when `config` is
+# empty; set any of them to override:
+#   globalRoot       - root of the global Copilot folder (default: ~/.copilot)
+#   globalAgentsDir  - absolute path to global agents   (default: <globalRoot>/agents)
+#   globalSkillsDir  - absolute path to global skills   (default: <globalRoot>/skills)
+#   localAgentsDir   - project-relative agents dir      (default: .github/agents)
+#   localSkillsDir   - project-relative skills dir      (default: .github/skills)
+#   providerName     - skill provider name              (default: copilot)
+#   provider         - subagent provider for call_agent (default: spawn)
+#   cacheMs          - workspace scan cache, ms          (default: 5000)
+#   presetScope      - 'workspace' (current workspace only) or 'all'
+- insert:
+    - id: copilot-bridge
+      name: 'dsh-copilot-bridge'
+      config: {}

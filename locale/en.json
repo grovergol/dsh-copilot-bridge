@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "Copilot Bridge",
+    "description": "Use your VS Code Copilot agents and skills (.github and ~/.copilot) in DeepSeek Harness."
+  }
+}
