@@ -69,6 +69,16 @@ Edit `cordis.patch.yml` (or the row in the profile) to override:
 | `cacheMs` | `5000` | How long a workspace agent scan is reused |
 | `presetScope` | `workspace` | `workspace` = current workspace only; `all` = keep everything |
 
+## Requirements
+
+The plugin manager runs `pnpm add` to install the bundle, so **pnpm 11 or newer**
+must be on `PATH` before installing (pnpm 7 fails with
+`ERR_PNPM_ADDING_TO_ROOT`). Upgrade with:
+
+```text
+npm install -g pnpm@11
+```
+
 ## Installation
 
 It is a DeepSeek Harness **bundle**: a `package.json` with a `dsh.bundle.patch`
