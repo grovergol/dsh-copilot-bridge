@@ -563,16 +563,13 @@ export function apply(ctx, config = {}) {
         await pruneWorkspaces()
       }
 
-      const request = {
-        prompt: [{ type: 'text', text: args.task }],
-        parent: caller,
-        agentPreset: presetId,
-      }
-      if (args.cwd !== undefined) request.cwd = args.cwd
       const activation = await subagents.startActivation({
         provider: settings.provider,
         label: args.description ?? `delegate to ${target.name}`,
-        request,
+        prompt: [{ type: 'text', text: args.task }],
+        parent: caller,
+        agentPreset: presetId,
+        ...(args.cwd === undefined ? {} : { cwd: args.cwd }),
         signal: exec.signal,
         delivery: 'parent',
       })
